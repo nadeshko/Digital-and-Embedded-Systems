@@ -1,0 +1,84 @@
+[Directories]
+Include=
+Library=
+LinkerScript=
+output=
+
+[defines]
+enabled=0
+chip=1
+D1=
+V1=
+buildcount=7
+
+[fileformats]
+forcecoff=0
+debug=4
+error=2
+object=0
+list=0
+scratch=0
+sta=1
+tre=1
+expandtree=0
+allerrors=1
+allwarnings=1
+stayupne=3
+stayupoe=0
+
+[PROJECT]
+Target=new.hex
+Development_Mode=
+Processor_Text=PIC18F27K40
+ToolSuite=CCS
+CCSVersion=5.093d
+Compiler=PCH
+
+[Target Data]
+BuildTool=C-COMPILER
+OptionString=+FH
+AdditionalOptionString=
+BuildRequired=1
+FileList=new.c
+
+[new.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+
+[mru-list]
+1=new.c
+
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+
+
+[CompilerVersion]
+Fixed=
+
+[Opened Files]
+1=new.c
+t1=231
+Count=1
+
+[ProjectLog]
+Days=1
+D1=14-03-2020
+D1_L=7
+D1_L1=[50011]Project Closed.
+D1_L2=[50011]Project Opened.
+D1_L3=[50198]Started Editing.
+D1_L4=[51575]Stopped Editing.
+D1_L5=[51681]Started Editing.
+D1_L6=[51891]Stopped Editing.
+TotalEdit=22
+TotalDebug=0
+D1_E=22
+D1_D=0
+D1_L7=[51891]Project Closed.
+[Units]
+Count=1
+1=new (main)

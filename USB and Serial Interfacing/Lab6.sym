@@ -1,0 +1,255 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019     @INTERRUPT_AREA
+01A     @INTERRUPT_AREA
+01B     @INTERRUPT_AREA
+01C-01D strtok.save
+01E-021 _Randseed
+022     rs232_errors
+023-042 RS232_buffer
+043     RS232_next_in
+044     RS232_next_out
+045-058 brightness
+059-05A @sprintf_string
+05B.0   MAIN.startup
+05C     MAIN.kbhit
+05D-07C MAIN.command
+07D-07E Cmd_Receive.string
+07D-07E GetCom.command_string
+07D     MAIN.@SCRATCH1
+07D     @PSTRINGR_1075.@SCRATCH1
+07E     @PSTRINGR_1075.@SCRATCH2
+07F     GetCom.length
+07F-087 Cmd_Receive.LED1ON
+080     GetCom.c
+081     GetCom.@SCRATCH1
+082     GetCom.@SCRATCH2
+088-091 Cmd_Receive.LED1OFF
+092-09A Cmd_Receive.LED2ON
+09B-0A4 Cmd_Receive.LED2OFF
+0A5-0AD Cmd_Receive.LED3ON
+0AE-0B7 Cmd_Receive.LED3OFF
+0B8-0C0 Cmd_Receive.LED4ON
+0C1-0CA Cmd_Receive.LED4OFF
+0CB-0D6 Cmd_Receive.LED1FLASH
+0D7-0E2 Cmd_Receive.LED2FLASH
+0E3-0EE Cmd_Receive.LED3FLASH
+0EF-0FA Cmd_Receive.LED4FLASH
+0FB-105 Cmd_Receive.brightness
+106     Cmd_Receive.flash
+107-10A Cmd_Receive.value
+10B-10C Cmd_Receive.a
+10D-10E strupr.s
+10D-110 @SFTOI.P1
+10D-10E GetBrightness.brightness_input
+10D     @delay_ms1.P1
+10D     Cmd_Receive.@SCRATCH1
+10D     @PSTRINGC_1075.@SCRATCH1
+10E     Cmd_Receive.@SCRATCH2
+10E     @PSTRINGC_1075.@SCRATCH2
+10F-110 strstr.s1
+10F-110 strupr.p
+10F-110 strcmp.s1
+10F     GetBrightness.i
+10F     Cmd_Receive.@SCRATCH3
+10F     @PSTRINGC_1075.@SCRATCH3
+110     GetBrightness.length
+110     @PUTCHAR_BIU_1.P1
+110     Cmd_Receive.@SCRATCH4
+111-114 GetBrightness.level
+111-112 strstr.s2
+111-112 strcmp.s2
+111     @delay_us1.P1
+111     strupr.@SCRATCH1
+112     strupr.@SCRATCH2
+113-114 strstr.s
+113     strcmp.@SCRATCH1
+113     strupr.@SCRATCH3
+115-116 strstr.t
+115-116 strtof.s
+115     GetBrightness.@SCRATCH1
+116     GetBrightness.@SCRATCH2
+117-118 strtof.endptr
+117     strstr.@SCRATCH1
+117     GetBrightness.@SCRATCH3
+119-11C strtof.pow10
+11D-120 strtof.result
+121.0   strtof.skip
+121.1   strtof.sign
+121.2   strtof.point
+122     strtof.c
+123     strtof.ptr
+124-127 @MULFF.P1
+124     strtof.@SCRATCH1
+125     strtof.@SCRATCH2
+126     strtof.@SCRATCH3
+127     strtof.@SCRATCH4
+128-12B @DIVFF.P1
+128-12B @ADDFF.P2
+128-129 @ITOF.P3
+128-12B @MULFF.P4
+12C-12F @DIVFF.P1
+12C-12F @ADDFF.P2
+12C     @MULFF.@SCRATCH1
+12D     @MULFF.@SCRATCH2
+12E     @MULFF.@SCRATCH3
+130     @ADDFF.@SCRATCH1
+130     @DIVFF.@SCRATCH1
+131     @ADDFF.@SCRATCH2
+131     @DIVFF.@SCRATCH2
+132     @ADDFF.@SCRATCH3
+132     @DIVFF.@SCRATCH3
+133     @ADDFF.@SCRATCH4
+133     @DIVFF.@SCRATCH4
+134     @ADDFF.@SCRATCH5
+134     @DIVFF.@SCRATCH5
+135     @ADDFF.@SCRATCH6
+135     @DIVFF.@SCRATCH6
+136     @ADDFF.@SCRATCH7
+137     @ADDFF.@SCRATCH8
+138     RS232_Interrupt_Routine.@SCRATCH1
+139     RS232_Interrupt_Routine.@SCRATCH2
+13A     RS232_Interrupt_Routine.@SCRATCH3
+13B     RS232_Interrupt_Routine.@SCRATCH4
+ED6.2   WDTSTATE
+F2F.4   LVDRDY
+F2F.5   LVDOUT
+F35.6   C2OUT
+F39.6   C1OUT
+F51.0   MDBIT
+F51.5   MDOUT
+F5A.3   ADACLR
+F83-F85 Latch
+F88-F8A Direction
+F8D-F8F Port
+FA2.5   PWM4OUT
+FA5.5   PWM3OUT
+FA6     CCP_2_LOW
+FA6     CCP_2
+FA7     CCP_2_HIGH
+FAA     CCP_1_LOW
+FAA     CCP_1
+FAB     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000C0  @GETCH_BIU_1
+0000DA  RS232_Interrupt_Routine
+00011C  @const1123.call
+000120  @const1128.call
+000124  @const1129.call
+000128  @const1130.call
+00012C  @const1131.call
+000130  @const1132.call
+000134  @const1133.call
+000138  @const1134.call
+00013C  @const1135.call
+000140  @const1136.call
+000144  @const1137.call
+000148  @const1138.call
+00014C  @const1139.call
+000150  @const1143.call
+00016C  @const1150.call
+00018A  @const1151.call
+0001A0  @const1152.call
+0001EA  @const1153.call
+000234  @const1154.call
+000270  @const1155.call
+0002AC  @const1156.call
+0002C8  @const1157.call
+000334  @delay_us1
+00035A  @PUTCHAR_BIU_1
+000372  @PSTRINGC_1075
+00039A  @PSTRINGR_1075
+0003C0  GetCom
+000448  strupr
+0004A8  strcmp
+000520  @delay_ms1
+000548  strstr
+0005C8  @MULFF
+0006BE  @ITOF
+0006F4  @DIVFF
+000852  @ADDFF
+000ACA  strtof
+000D16  GetBrightness
+000DAE  @SFTOI
+000DEC  Cmd_Receive
+001604  MAIN
+001604  @cinit1
+001674  @cinit2
+0136  StrtoulGO
+0136  StrtolGO
+
+Project Directory:
+    E:\Lab 6\
+
+Project Files:
+    new.c                                                   [14-Mar-20 14:21  CRC=A62BB175]
+    D:\Program Files (x86)\PICC\Devices\18F27K40.h          [03-Jan-20 13:01  CRC=348B0374]
+    D:\Program Files (x86)\PICC\Drivers\stdio.h             [31-Jul-07 14:24  CRC=4E4534F4]
+    D:\Program Files (x86)\PICC\Drivers\string.h            [04-Dec-19 10:56  CRC=428BEDCB]
+    D:\Program Files (x86)\PICC\Drivers\stddef.h            [30-Jan-19 11:26  CRC=897CEC6C]
+    D:\Program Files (x86)\PICC\Drivers\ctype.h             [03-Jan-08 14:55  CRC=2D1F019F]
+    D:\Program Files (x86)\PICC\Drivers\stdlib.h            [29-Mar-19 12:31  CRC=99D16202]
+
+Source signature=55C689B7
+Program memory checksum=0000
+Hex file CRC=D6F5
+
+Units:
+    E:\Lab 6\new (main)
+
+Compiler Settings:
+    Processor:      PIC18F27K40
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+Output Files:
+    XREF file:   new.xsym
+    Errors:      new.err
+    Ext Symbols: new.esym
+    INHX32:      new.hex
+    Symbols:     new.sym
+    List:        new.lst
+    Debug/COFF:  new.cof
+    Project:     new.ccspjt
+    Call Tree:   new.tre
+    Statistics:  new.STA

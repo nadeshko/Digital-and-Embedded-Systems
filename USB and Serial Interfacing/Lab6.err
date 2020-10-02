@@ -1,0 +1,5 @@
+Compiling E:\Lab 6\new on 14-Mar-20 at 14:21
+>>> Warning 203 "E:\Lab 6\new.c" Line 244(1,1): Condition always TRUE
+      Memory usage:   ROM=5%      RAM=3% - 9%
+      0 Errors,  1 Warnings.
+Build Successful.
