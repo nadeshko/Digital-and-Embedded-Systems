@@ -1,0 +1,674 @@
+CCS PCH C Compiler, Version 5.081, 44464               04-Feb-20 15:02
+
+               Filename:   D:\RunningLight.lst
+
+               ROM used:   974 bytes (1%)
+                           Largest free fragment is 65536
+               RAM used:   57 (2%) at main() level
+                           58 (2%) worst case
+               Stack used: 1 locations
+               Stack size: 31
+
+*
+00000:  GOTO   0058
+.................... #include <18F27K40.h> 
+.................... //////////// Standard Header file for the PIC18F27K40 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F27K40 
+*
+00030:  MOVF   39,W
+00032:  CLRF   01
+00034:  SUBWF  38,W
+00036:  BC    003E
+00038:  MOVFF  38,00
+0003C:  BRA    0056
+0003E:  CLRF   00
+00040:  MOVLW  08
+00042:  MOVWF  3A
+00044:  RLCF   38,F
+00046:  RLCF   00,F
+00048:  MOVF   39,W
+0004A:  SUBWF  00,W
+0004C:  BTFSC  FD8.0
+0004E:  MOVWF  00
+00050:  RLCF   01,F
+00052:  DECFSZ 3A,F
+00054:  BRA    0044
+00056:  RETURN 0
+....................  
+.................... #list 
+....................  
+.................... #fuses NOMCLR RSTOSC_HFINTRC_1MHZ CLKOUT NOWDT NOPROTECT NOCPD NOPUT 
+.................... #use delay(internal=16MHZ, clock_out) 
+*
+00004:  CLRF   FEA
+00006:  MOVLW  39
+00008:  MOVWF  FE9
+0000A:  MOVF   FEF,W
+0000C:  BTFSC  FD8.2
+0000E:  GOTO   002E
+00012:  MOVLW  05
+00014:  MOVWF  01
+00016:  CLRF   00
+00018:  DECFSZ 00,F
+0001A:  BRA    0018
+0001C:  DECFSZ 01,F
+0001E:  BRA    0016
+00020:  MOVLW  2E
+00022:  MOVWF  00
+00024:  DECFSZ 00,F
+00026:  BRA    0024
+00028:  BRA    002A
+0002A:  DECFSZ FEF,F
+0002C:  BRA    0012
+0002E:  RETURN 0
+....................  
+.................... struct IOPort_Definition1 
+.................... {                       // 1st structure 
+....................    int ExperimentSelect:4;  // Pins RA0..3 for selection 
+....................    int unused_A:4;     // remaining RA 
+....................    int FourBitInput:4; 
+....................    int unused_B:4;       // unused B pins 
+....................    int MultiBitOutput:4;    // Pin RC0 LED used for single-bit indication 
+....................    int unused_C:4;          //Remaining bits of Port C; 
+.................... } IO_Port_One, IO_Direction_One, IO_Latch_One; //naming variables of 1st structure 
+....................  
+.................... struct IOPort_Definition2  
+.................... {                       // 2nd structure 
+....................    int ExperimentSelect:4;       // Pins RA0..3 for selection 
+....................    int unused_A1:2; 
+....................    int1 Clock_Output; 
+....................    int1 unused_A2; 
+....................    int1 Set;                      
+....................    int1 Reset; 
+....................    int unused_B:6;               // remaining B's  
+....................    int SixBitOutput:6;   // RC0..1 for logic output; 
+....................    int unused_C:2;               // remaining RCs 
+.................... } IO_Port_Two, IO_Direction_Two, IO_Latch_Two;  //naming variables of 2nd structure  
+....................  
+.................... struct IOPort_Definition3 
+.................... {                       // 3rd strucutre 
+....................    int ExperimentSelect:4;       // Pins RA0..3 for selection 
+....................    int unused_A:4;               // remaining RA 
+....................    int Logic_Input_One:2;        // bitwise logic operations in RB0..3 
+....................    int Logic_Input_Two:2;             // Reset switch on Pin RB1 
+....................    int unused_B:4;               // remaining RB pins 
+....................    int ThreeBitOutput_One:3;     // LED output pin RC0..2 
+....................    int ThreeBitOutput_Two:3;     // LED output pin RC3..5  
+....................    int unused_C:2;               // unused RC6..7 
+.................... } IO_Port_Three, IO_Direction_Three, IO_Latch_Three; //naming variables of 3rd structure 
+....................  
+.................... #byte IO_Port_One = 0xF8D       // PORTA register in Special Function Register (SFR) 
+.................... #byte IO_Direction_One = 0xF88  // TRISA register 
+.................... #byte IO_Latch_One = 0xF83      // LATA register 
+....................  
+.................... #byte IO_Port_Two = 0xF8D       // PORTA register in Special Function Register (SFR) 
+.................... #byte IO_Direction_Two = 0xF88  // TRISA register 
+.................... #byte IO_Latch_Two = 0xF83      // LATA register 
+....................  
+.................... #byte IO_Port_Three = 0xF8D       // PORTA register in Special Function Register (SFR) 
+.................... #byte IO_Direction_Three = 0xF88  // TRISA register 
+.................... #byte IO_Latch_Three = 0xF83      // LATA register 
+....................  
+.................... void main () 
+*
+00058:  BSF    F81.7
+0005A:  BCF    F81.6
+0005C:  CLRF   FF8
+0005E:  BCF    FF2.5
+00060:  MOVLB  E
+00062:  CLRF   xDD
+00064:  CLRF   xDA
+00066:  CLRF   xDC
+00068:  MOVLW  05
+0006A:  MOVWF  xDE
+0006C:  MOVLW  60
+0006E:  MOVWF  xD8
+00070:  MOVLB  F
+00072:  CLRF   x11
+00074:  CLRF   x19
+00076:  CLRF   x21
+00078:  CLRF   x3A
+0007A:  CLRF   x3B
+0007C:  CLRF   x3C
+0007E:  CLRF   x39
+00080:  CLRF   x36
+00082:  CLRF   x37
+00084:  CLRF   x38
+00086:  CLRF   x35
+.................... { 
+....................    IO_Direction_One.ExperimentSelect = 0b1111; 
+00088:  MOVLW  F0
+0008A:  ANDWF  F88,W
+0008C:  IORLW  0F
+0008E:  MOVWF  F88
+....................    IO_Direction_One.unused_A = 0b0000; 
+00090:  MOVLW  0F
+00092:  ANDWF  F88,W
+00094:  MOVWF  F88
+....................    IO_Direction_One.FourBitInput= 0b1111; 
+00096:  MOVLW  F0
+00098:  ANDWF  F89,W
+0009A:  IORLW  0F
+0009C:  MOVWF  F89
+....................    IO_Direction_One.unused_B = 0b0000; 
+0009E:  MOVLW  0F
+000A0:  ANDWF  F89,W
+000A2:  MOVWF  F89
+....................    IO_Direction_Two.SixBitOutput = 0b000000; 
+000A4:  MOVLW  C0
+000A6:  ANDWF  F8A,W
+000A8:  MOVWF  F8A
+....................    IO_Direction_Two.unused_C = 0b00; 
+000AA:  MOVLW  3F
+000AC:  ANDWF  F8A,W
+000AE:  MOVWF  F8A
+....................     
+....................    int LUT[16] = {0x00, 0x01, 0x03, 0x02, 0x06, 0x07, 0x05, 0x04, 0x0C, 0x0D, 0x0F, 0x0E, 0x0A, 0x0B, 0x09, 0x08}; 
+000B0:  CLRF   05
+000B2:  MOVLW  01
+000B4:  MOVWF  06
+000B6:  MOVLW  03
+000B8:  MOVWF  07
+000BA:  MOVLW  02
+000BC:  MOVWF  08
+000BE:  MOVLW  06
+000C0:  MOVWF  09
+000C2:  MOVLW  07
+000C4:  MOVWF  0A
+000C6:  MOVLW  05
+000C8:  MOVWF  0B
+000CA:  MOVLW  04
+000CC:  MOVWF  0C
+000CE:  MOVLW  0C
+000D0:  MOVWF  0D
+000D2:  MOVLW  0D
+000D4:  MOVWF  0E
+000D6:  MOVLW  0F
+000D8:  MOVWF  0F
+000DA:  MOVLW  0E
+000DC:  MOVWF  10
+000DE:  MOVLW  0A
+000E0:  MOVWF  11
+000E2:  MOVLW  0B
+000E4:  MOVWF  12
+000E6:  MOVLW  09
+000E8:  MOVWF  13
+000EA:  MOVLW  08
+000EC:  MOVWF  14
+....................    int samplingrates[16] = {50, 90, 120, 400, 500, 800, 940, 1000, 1350, 1800, 2000, 3000, 4000, 6000, 8000, 10000}; 
+000EE:  MOVLW  32
+000F0:  MOVWF  15
+000F2:  MOVLW  5A
+000F4:  MOVWF  16
+000F6:  MOVLW  78
+000F8:  MOVWF  17
+000FA:  MOVLW  90
+000FC:  MOVWF  18
+000FE:  MOVLW  F4
+00100:  MOVWF  19
+00102:  MOVLW  20
+00104:  MOVWF  1A
+00106:  MOVLW  AC
+00108:  MOVWF  1B
+0010A:  MOVLW  E8
+0010C:  MOVWF  1C
+0010E:  MOVLW  46
+00110:  MOVWF  1D
+00112:  MOVLW  08
+00114:  MOVWF  1E
+00116:  MOVLW  D0
+00118:  MOVWF  1F
+0011A:  MOVLW  B8
+0011C:  MOVWF  20
+0011E:  MOVLW  A0
+00120:  MOVWF  21
+00122:  MOVLW  70
+00124:  MOVWF  22
+00126:  MOVLW  40
+00128:  MOVWF  23
+0012A:  MOVLW  10
+0012C:  MOVWF  24
+....................    int FSMLab_One[10] = {0x1E, 0x04, 0x05, 0x0F, 0x0D, 0x02, 0x03, 0x0B, 0x0C, 0x01}; //Look up Table for FSM Lab 1 
+0012E:  MOVLW  1E
+00130:  MOVWF  25
+00132:  MOVLW  04
+00134:  MOVWF  26
+00136:  MOVLW  05
+00138:  MOVWF  27
+0013A:  MOVLW  0F
+0013C:  MOVWF  28
+0013E:  MOVLW  0D
+00140:  MOVWF  29
+00142:  MOVLW  02
+00144:  MOVWF  2A
+00146:  MOVLW  03
+00148:  MOVWF  2B
+0014A:  MOVLW  0B
+0014C:  MOVWF  2C
+0014E:  MOVLW  0C
+00150:  MOVWF  2D
+00152:  MOVLW  01
+00154:  MOVWF  2E
+....................    int RunningLight [8] = {0b000000, 0b000001, 0b000010, 0b000100, 0b001000, 0b010000, 0b100000, 0b000000}; 
+00156:  CLRF   2F
+00158:  MOVWF  30
+0015A:  MOVLW  02
+0015C:  MOVWF  31
+0015E:  MOVLW  04
+00160:  MOVWF  32
+00162:  MOVLW  08
+00164:  MOVWF  33
+00166:  MOVLW  10
+00168:  MOVWF  34
+0016A:  MOVLW  20
+0016C:  MOVWF  35
+0016E:  CLRF   36
+....................    int counter = 0; 
+00170:  CLRF   37
+....................     
+....................    port_a_pullups(0xFF); 
+00172:  SETF   x10
+....................    port_b_pullups(0xFF); 
+00174:  SETF   x18
+....................     
+....................     
+....................    while(1) 
+....................    { 
+....................       switch (IO_Port_One.ExperimentSelect) 
+00176:  MOVF   F8D,W
+00178:  ANDLW  0F
+0017A:  XORLW  00
+0017C:  MOVLB  0
+0017E:  BZ    01C0
+00180:  XORLW  01
+00182:  BZ    01CA
+00184:  XORLW  02
+00186:  BZ    01F6
+00188:  XORLW  07
+0018A:  BZ    0216
+0018C:  XORLW  01
+0018E:  BZ    0236
+00190:  XORLW  03
+00192:  BZ    0266
+00194:  XORLW  01
+00196:  BTFSC  FD8.2
+00198:  BRA    02AE
+0019A:  XORLW  0F
+0019C:  BTFSC  FD8.2
+0019E:  BRA    02CE
+001A0:  XORLW  01
+001A2:  BTFSC  FD8.2
+001A4:  BRA    02EE
+001A6:  XORLW  03
+001A8:  BTFSC  FD8.2
+001AA:  BRA    0302
+001AC:  XORLW  01
+001AE:  BTFSC  FD8.2
+001B0:  BRA    0322
+001B2:  XORLW  07
+001B4:  BTFSC  FD8.2
+001B6:  BRA    0348
+001B8:  XORLW  01
+001BA:  BTFSC  FD8.2
+001BC:  BRA    0388
+001BE:  BRA    03C0
+....................       { 
+....................          case 0b0000: 
+....................          { 
+....................             IO_Port_One.MultiBitOutput = 0b0000; 
+001C0:  MOVLW  F0
+001C2:  ANDWF  F8F,W
+001C4:  MOVWF  F8F
+....................             counter = 0; 
+001C6:  CLRF   37
+....................             break; 
+001C8:  BRA    03C8
+....................          } 
+....................          case 0b0001: //single led toggling 
+....................          { 
+....................             IO_Port_One.MultiBitOutput = 0b0001;  // Toggle single LED 
+001CA:  MOVLW  F0
+001CC:  ANDWF  F8F,W
+001CE:  IORLW  01
+001D0:  MOVWF  F8F
+....................             delay_ms(500); //delays for 1 second before restarting loop 
+001D2:  MOVLW  02
+001D4:  MOVWF  38
+001D6:  MOVLW  FA
+001D8:  MOVWF  39
+001DA:  RCALL  0004
+001DC:  DECFSZ 38,F
+001DE:  BRA    01D6
+....................             IO_Port_One.MultiBitOutput = 0b0000; 
+001E0:  MOVLW  F0
+001E2:  ANDWF  F8F,W
+001E4:  MOVWF  F8F
+....................             delay_ms(500); 
+001E6:  MOVLW  02
+001E8:  MOVWF  38
+001EA:  MOVLW  FA
+001EC:  MOVWF  39
+001EE:  RCALL  0004
+001F0:  DECFSZ 38,F
+001F2:  BRA    01EA
+....................             break; 
+001F4:  BRA    03C8
+....................          } 
+....................          case 0b0011: //4bit pure binary up counter 
+....................          { 
+....................             IO_Port_One.MultiBitOutput++; 
+001F6:  MOVF   F8F,W
+001F8:  ADDLW  01
+001FA:  ANDLW  0F
+001FC:  MOVWF  00
+001FE:  MOVLW  F0
+00200:  ANDWF  F8F,W
+00202:  IORWF  00,W
+00204:  MOVWF  F8F
+....................             delay_ms(1000); 
+00206:  MOVLW  04
+00208:  MOVWF  38
+0020A:  MOVLW  FA
+0020C:  MOVWF  39
+0020E:  RCALL  0004
+00210:  DECFSZ 38,F
+00212:  BRA    020A
+....................             break; 
+00214:  BRA    03C8
+....................          } 
+....................          case 0b0100: //4bit pure binary down counter 
+....................          { 
+....................             IO_Port_One.MultiBitOutput--; 
+00216:  MOVF   F8F,W
+00218:  ADDLW  0F
+0021A:  ANDLW  0F
+0021C:  MOVWF  00
+0021E:  MOVLW  F0
+00220:  ANDWF  F8F,W
+00222:  IORWF  00,W
+00224:  MOVWF  F8F
+....................             delay_ms(1000); 
+00226:  MOVLW  04
+00228:  MOVWF  38
+0022A:  MOVLW  FA
+0022C:  MOVWF  39
+0022E:  RCALL  0004
+00230:  DECFSZ 38,F
+00232:  BRA    022A
+....................             break; 
+00234:  BRA    03C8
+....................          } 
+....................          case 0b0101: 
+....................          { 
+....................             IO_Port_One.MultiBitOutput = LUT[++counter&0b00001111]; 
+00236:  INCF   37,F
+00238:  MOVF   37,W
+0023A:  ANDLW  0F
+0023C:  CLRF   03
+0023E:  ADDLW  05
+00240:  MOVWF  FE9
+00242:  MOVLW  00
+00244:  ADDWFC 03,W
+00246:  MOVWF  FEA
+00248:  MOVF   FEF,W
+0024A:  ANDLW  0F
+0024C:  MOVWF  00
+0024E:  MOVLW  F0
+00250:  ANDWF  F8F,W
+00252:  IORWF  00,W
+00254:  MOVWF  F8F
+....................             delay_ms(1000); 
+00256:  MOVLW  04
+00258:  MOVWF  38
+0025A:  MOVLW  FA
+0025C:  MOVWF  39
+0025E:  RCALL  0004
+00260:  DECFSZ 38,F
+00262:  BRA    025A
+....................             break; 
+00264:  BRA    03C8
+....................          } 
+....................          case 0b0110: //3bit pure binary up-counter with 3bit gray-code up-counter 
+....................          { 
+....................             IO_Port_Three.ThreeBitOutput_One++; 
+00266:  MOVF   F8F,W
+00268:  ADDLW  01
+0026A:  ANDLW  07
+0026C:  MOVWF  00
+0026E:  MOVLW  F8
+00270:  ANDWF  F8F,W
+00272:  IORWF  00,W
+00274:  MOVWF  F8F
+....................             IO_Port_Three.ThreeBitOutput_Two = LUT[++counter&0b00000111]; 
+00276:  INCF   37,F
+00278:  MOVF   37,W
+0027A:  ANDLW  07
+0027C:  CLRF   03
+0027E:  ADDLW  05
+00280:  MOVWF  FE9
+00282:  MOVLW  00
+00284:  ADDWFC 03,W
+00286:  MOVWF  FEA
+00288:  MOVF   FEF,W
+0028A:  ANDLW  07
+0028C:  MOVWF  00
+0028E:  BCF    FD8.0
+00290:  RLCF   00,F
+00292:  RLCF   00,F
+00294:  RLCF   00,F
+00296:  MOVLW  C7
+00298:  ANDWF  F8F,W
+0029A:  IORWF  00,W
+0029C:  MOVWF  F8F
+....................             delay_ms(1000); 
+0029E:  MOVLW  04
+002A0:  MOVWF  38
+002A2:  MOVLW  FA
+002A4:  MOVWF  39
+002A6:  RCALL  0004
+002A8:  DECFSZ 38,F
+002AA:  BRA    02A2
+....................             break; 
+002AC:  BRA    03C8
+....................          } 
+....................          case 0b0111: //bitwise AND operation 
+....................          { 
+....................             IO_Port_One.MultiBitOutput = IO_Port_Three.Logic_Input_One & IO_Port_Three.Logic_Input_Two; 
+002AE:  MOVF   F8E,W
+002B0:  ANDLW  03
+002B2:  MOVWF  38
+002B4:  MOVFF  F8E,00
+002B8:  RRCF   00,F
+002BA:  RRCF   00,W
+002BC:  ANDLW  03
+002BE:  ANDWF  38,W
+002C0:  ANDLW  0F
+002C2:  MOVWF  00
+002C4:  MOVLW  F0
+002C6:  ANDWF  F8F,W
+002C8:  IORWF  00,W
+002CA:  MOVWF  F8F
+....................             break; 
+002CC:  BRA    03C8
+....................          } 
+....................           case 0b1000: //bitwise OR operation 
+....................          { 
+....................             IO_Port_One.MultiBitOutput = IO_Port_Three.Logic_Input_One | IO_Port_Three.Logic_Input_Two; 
+002CE:  MOVF   F8E,W
+002D0:  ANDLW  03
+002D2:  MOVWF  38
+002D4:  MOVFF  F8E,00
+002D8:  RRCF   00,F
+002DA:  RRCF   00,W
+002DC:  ANDLW  03
+002DE:  IORWF  38,W
+002E0:  ANDLW  0F
+002E2:  MOVWF  00
+002E4:  MOVLW  F0
+002E6:  ANDWF  F8F,W
+002E8:  IORWF  00,W
+002EA:  MOVWF  F8F
+....................             break; 
+002EC:  BRA    03C8
+....................          } 
+....................          case 0b1001: //bitwise NOT operation 
+....................          { 
+....................             IO_Port_One.MultiBitOutput = ~IO_Port_One.FourBitInput; 
+002EE:  MOVF   F8E,W
+002F0:  ANDLW  0F
+002F2:  XORLW  FF
+002F4:  ANDLW  0F
+002F6:  MOVWF  00
+002F8:  MOVLW  F0
+002FA:  ANDWF  F8F,W
+002FC:  IORWF  00,W
+002FE:  MOVWF  F8F
+....................             break; 
+00300:  BRA    03C8
+....................          } 
+....................          case 0b1010: //bitwise XOR operation 
+....................          { 
+....................             IO_Port_One.MultiBitOutput = IO_Port_Three.Logic_Input_One ^ IO_Port_Three.Logic_Input_Two; 
+00302:  MOVF   F8E,W
+00304:  ANDLW  03
+00306:  MOVWF  38
+00308:  MOVFF  F8E,00
+0030C:  RRCF   00,F
+0030E:  RRCF   00,W
+00310:  ANDLW  03
+00312:  XORWF  38,W
+00314:  ANDLW  0F
+00316:  MOVWF  00
+00318:  MOVLW  F0
+0031A:  ANDWF  F8F,W
+0031C:  IORWF  00,W
+0031E:  MOVWF  F8F
+....................             break; 
+00320:  BRA    03C8
+....................          } 
+....................          case 0b1011: //set-reset flip flop 
+....................          { 
+....................             IO_Port_Three.ThreeBitOutput_One = (IO_Port_Two.Set | (~IO_Port_Two.Reset & IO_Port_Three.ThreeBitOutput_One)); 
+00322:  MOVLW  00
+00324:  BTFSC  F8E.0
+00326:  MOVLW  01
+00328:  MOVWF  38
+0032A:  MOVLW  00
+0032C:  BTFSS  F8E.1
+0032E:  MOVLW  01
+00330:  MOVWF  39
+00332:  MOVF   F8F,W
+00334:  ANDLW  07
+00336:  ANDWF  39,W
+00338:  IORWF  38,W
+0033A:  ANDLW  07
+0033C:  MOVWF  00
+0033E:  MOVLW  F8
+00340:  ANDWF  F8F,W
+00342:  IORWF  00,W
+00344:  MOVWF  F8F
+....................             break; 
+00346:  BRA    03C8
+....................          } 
+....................          case 0b1100: //Input Table Demonstration using switches RB0..3 
+....................          { 
+....................             IO_Port_Two.SixBitOutput = RunningLight[++counter%7]; 
+00348:  INCF   37,F
+0034A:  MOVFF  37,38
+0034E:  MOVLW  07
+00350:  MOVWF  39
+00352:  RCALL  0030
+00354:  CLRF   03
+00356:  MOVF   00,W
+00358:  ADDLW  2F
+0035A:  MOVWF  FE9
+0035C:  MOVLW  00
+0035E:  ADDWFC 03,W
+00360:  MOVWF  FEA
+00362:  MOVF   FEF,W
+00364:  ANDLW  3F
+00366:  MOVWF  00
+00368:  MOVLW  C0
+0036A:  ANDWF  F8F,W
+0036C:  IORWF  00,W
+0036E:  MOVWF  F8F
+....................             delay_ms(samplingrates[IO_Port_One.FourBitInput]); 
+00370:  MOVF   F8E,W
+00372:  ANDLW  0F
+00374:  CLRF   03
+00376:  ADDLW  15
+00378:  MOVWF  FE9
+0037A:  MOVLW  00
+0037C:  ADDWFC 03,W
+0037E:  MOVWF  FEA
+00380:  MOVFF  FEF,39
+00384:  RCALL  0004
+....................             break; 
+00386:  BRA    03C8
+....................          } 
+....................          case 0b1101: //Lab 1 FSM using Look-up Table 
+....................          { 
+....................             IO_Port_Two.SixBitOutput = FSMLab_One[++counter%10]; 
+00388:  INCF   37,F
+0038A:  MOVFF  37,38
+0038E:  MOVLW  0A
+00390:  MOVWF  39
+00392:  RCALL  0030
+00394:  CLRF   03
+00396:  MOVF   00,W
+00398:  ADDLW  25
+0039A:  MOVWF  FE9
+0039C:  MOVLW  00
+0039E:  ADDWFC 03,W
+003A0:  MOVWF  FEA
+003A2:  MOVF   FEF,W
+003A4:  ANDLW  3F
+003A6:  MOVWF  00
+003A8:  MOVLW  C0
+003AA:  ANDWF  F8F,W
+003AC:  IORWF  00,W
+003AE:  MOVWF  F8F
+....................             delay_ms(2000); 
+003B0:  MOVLW  08
+003B2:  MOVWF  38
+003B4:  MOVLW  FA
+003B6:  MOVWF  39
+003B8:  RCALL  0004
+003BA:  DECFSZ 38,F
+003BC:  BRA    03B4
+....................             break; 
+003BE:  BRA    03C8
+....................          } 
+....................          default: 
+....................          { 
+....................             IO_Port_Two.SixBitOutput = 0b000000; 
+003C0:  MOVLW  C0
+003C2:  ANDWF  F8F,W
+003C4:  MOVWF  F8F
+....................             counter = 0; 
+003C6:  CLRF   37
+....................          } 
+....................       }    
+003C8:  MOVLB  F
+003CA:  BRA    0176
+....................    } 
+.................... } 
+....................  
+003CC:  SLEEP 
+
+Configuration Fuses:
+   Word  1: FEEC   NOEXTOSC RSTOSC_HFINTRC_1MHZ CLKOUT CKS FCMEN
+   Word  2: FFFE   NOMCLR NOPUT NOLPBOR BROWNOUT BORV24 ZCDDIS PPS1WAY STVREN NODEBUG NOXINST
+   Word  3: FF9F   WDTSW NOWDT WDTWIN_SW WDTCLK_SW
+   Word  4: DFFF   NOWRT NOWRTC NOWRTB NOWRTD SCANE NOLVP
+   Word  5: FFFF   NOPROTECT NOCPD
+   Word  6: FFFF   NOEBTR NOEBTRB

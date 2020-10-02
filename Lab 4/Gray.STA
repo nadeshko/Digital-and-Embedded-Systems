@@ -1,0 +1,46 @@
+
+ROM used:   926/131072 (1%)
+            926/131072 (1%) including unused fragments
+
+            0.5 Average locations per line
+            12.3 Average locations per statement
+
+RAM used:   55/3712 (1%) at main() level
+            55/3712 (1%) worst case
+
+Stack used: 1 worst case (1 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  173    75 100  Gray.c
+ 1650     0   0  C:\Program Files (x86)\PICC\Devices\18F27K40.h
+----- -----
+ 1823    75 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     44   2    1             @delay_ms1
+0    878  47   51   3667 10.6  main
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               1
+    Statements              75
+    Comments                331
+    Volume (V)              3673
+    Difficulty (D)          10.4
+    Effort to implement (E) 38371
+    Time to implement (T)   36 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   17
+    Maintainability (MI)    59
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-0FFFE   922  64610  
+10000-1FFFE     0  65536  
+
+
+

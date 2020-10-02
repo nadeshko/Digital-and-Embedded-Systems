@@ -1,0 +1,87 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005-014 main.LUT
+015-024 main.samplingrates
+025-034 main.FSMLab_One
+035     main.counter
+036     main.@SCRATCH1
+037     @delay_ms1.P1
+037     main.@SCRATCH2
+ED6.2   WDTSTATE
+F2F.4   LVDRDY
+F2F.5   LVDOUT
+F35.6   C2OUT
+F39.6   C1OUT
+F51.0   MDBIT
+F51.5   MDOUT
+F5A.3   ADACLR
+F83-F85 IO_Latch_One
+F83-F85 IO_Latch_Two
+F83-F85 IO_Latch_Three
+F88-F8A IO_Direction_Two
+F88-F8A IO_Direction_One
+F88-F8A IO_Direction_Three
+F8D-F8F IO_Port_Three
+F8D-F8F IO_Port_Two
+F8D-F8F IO_Port_One
+FA2.5   PWM4OUT
+FA5.5   PWM3OUT
+FA6     CCP_2
+FA6     CCP_2_LOW
+FA7     CCP_2_HIGH
+FAA     CCP_1_LOW
+FAA     CCP_1
+FAB     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @delay_ms1
+000030  @cinit1
+000030  main
+000060  @cinit2
+
+Project Directory:
+    D:\Final Lab 4\
+
+Project Files:
+    Gray.c                                                  [03-Feb-20 11:33  CRC=93BD912D]
+    C:\Program Files (x86)\PICC\Devices\18F27K40.h          [20-Sep-18 11:32  CRC=B222C056]
+
+Source signature=F80311D9
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=F1A8
+
+Units:
+    Gray (main)
+
+Compiler Settings:
+    Processor:      PIC18F27K40
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   Gray.xsym
+    Errors:      Gray.err
+    Ext Symbols: Gray.esym
+    INHX32:      Gray.hex
+    Symbols:     Gray.sym
+    List:        Gray.lst
+    Debug/COFF:  Gray.cof
+    Project:     Gray.ccspjt
+    Call Tree:   Gray.tre
+    Statistics:  Gray.STA

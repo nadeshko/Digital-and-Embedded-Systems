@@ -1,0 +1,83 @@
+[Directories]
+Include=
+Library=
+LinkerScript=
+output=
+
+[defines]
+enabled=0
+chip=1
+D1=
+V1=
+buildcount=37
+
+[fileformats]
+forcecoff=0
+debug=4
+error=2
+object=0
+list=0
+scratch=0
+sta=1
+tre=1
+expandtree=0
+allerrors=1
+allwarnings=1
+stayupne=3
+stayupoe=0
+
+[PROJECT]
+Target=Gray.hex
+Development_Mode=
+Processor_Text=PIC18F27K40
+ToolSuite=CCS
+CCSVersion=5.081
+Compiler=PCH
+
+[Target Data]
+BuildTool=C-COMPILER
+OptionString=+FH
+AdditionalOptionString=
+BuildRequired=1
+FileList=Gray.c
+
+[Gray.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+
+[mru-list]
+1=Gray.c
+
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+
+
+[CompilerVersion]
+Fixed=
+
+[Opened Files]
+1=Gray.c
+t1=44
+Count=3
+2=Final Lab 4.c
+t2=65
+3=..\RunningLight.c
+t3=65
+
+[ProjectLog]
+Days=1
+D1=03-02-2020
+D1_L=6
+D1_L1=[37872]Project Closed.
+D1_L2=[37872]Project Opened.
+D1_L3=[37874]Started Editing.
+D1_L4=[41577]Stopped Editing.
+D1_L5=[41577]Started Editing.
+D1_L6=[41777]Project Closed.
+[Units]
+Count=1
+1=Gray (main)

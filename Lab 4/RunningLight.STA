@@ -1,0 +1,47 @@
+
+ROM used:   974/131072 (1%)
+            974/131072 (1%) including unused fragments
+
+            0.5 Average locations per line
+            15.0 Average locations per statement
+
+RAM used:   57/3712 (2%) at main() level
+            58/3712 (2%) worst case
+
+Stack used: 1 worst case (1 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  160    65 100  RunningLight.c
+ 1650     0   0  C:\Program Files (x86)\PICC\Devices\18F27K40.h
+----- -----
+ 1810    65 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     44   2    1             @delay_ms1
+0    886  45   53   3529 10.1  main
+0     40   2    3             @DIV88
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               1
+    Statements              65
+    Comments                331
+    Volume (V)              3538
+    Difficulty (D)          9.9
+    Effort to implement (E) 35196
+    Time to implement (T)   33 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   14
+    Maintainability (MI)    62
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-0FFFE   970  64562  
+10000-1FFFE     0  65536  
+
+
+
