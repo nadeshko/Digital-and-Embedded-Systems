@@ -1,0 +1,51 @@
+
+ROM used:   918/131072 (1%)
+            918/131072 (1%) including unused fragments
+
+            0.5 Average locations per line
+            22.4 Average locations per statement
+
+RAM used:   28/3712 (1%) at main() level
+            30/3712 (1%) worst case
+
+Stack used: 0 worst case (0 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  114    41 100  EE2A Lab5.c
+ 1650     0   0  C:\Program Files (x86)\PICC\Devices\18F27K40.h
+----- -----
+ 1764    41 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     84   5    0             @const767
+0     84   5    0             @const770
+0     84   5    0             @const773
+0    266  14    2    770  7.2  Timer_Two_Interrupt_Routine
+0    212  12    0    629  3.8  MAIN
+ Inline         0    643  3.9  @cinit1
+
+Program metrics:
+    Functions               3
+    Statements              41
+    Comments                333
+    Volume (V)              2586
+    Difficulty (D)          14.6
+    Effort to implement (E) 37891
+    Time to implement (T)   35 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   4
+    Maintainability (MI)    64
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000BE   184  0  
+000C0-0FFFE   730  64614  
+10000-1FFFE     0  65536  
+
+
+

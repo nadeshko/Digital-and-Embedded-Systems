@@ -1,0 +1,110 @@
+[Directories]
+Include=
+Library=
+LinkerScript=
+output=
+
+[defines]
+enabled=0
+chip=1
+D1=
+V1=
+buildcount=24
+
+[fileformats]
+forcecoff=0
+debug=4
+error=2
+object=0
+list=0
+scratch=0
+sta=1
+tre=1
+expandtree=0
+allerrors=1
+allwarnings=1
+stayupne=3
+stayupoe=0
+
+[PROJECT]
+Target=EE2A Lab5.hex
+Development_Mode=
+Processor_Text=PIC18F27K40
+ToolSuite=CCS
+CCSVersion=5.081
+Compiler=PCH
+
+[Target Data]
+BuildTool=C-COMPILER
+OptionString=+FH
+AdditionalOptionString=
+BuildRequired=1
+FileList=EE2A Lab5.c
+
+[EE2A Lab5.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+
+[mru-list]
+1=EE2A Lab5.c
+
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+
+
+[CompilerVersion]
+Fixed=
+
+[Opened Files]
+Count=2
+1=EE2A Lab5.c
+t1=11
+2=Taos.c
+t2=33
+
+[ProjectLog]
+Days=2
+D1=12-02-2020
+D1_L=11
+D1_L1=[49817]Project Closed.
+D1_L2=[49817]Project Opened.
+D1_L3=[49822]Started Editing.
+D1_L4=[50464]Stopped Editing.
+D1_L5=[51466]Started Editing.
+D1_L6=[51802]Stopped Editing.
+D1_L7=[52278]Started Editing.
+D1_L8=[52604]Stopped Editing.
+D1_L9=[52804]Started Editing.
+D1_L10=[52900]Stopped Editing.
+TotalEdit=55
+TotalDebug=0
+D1_E=9
+D1_D=0
+D1_L11=[52900]Project Closed.
+D2=24-02-2020
+D2_L=16
+D2_L1=[37598]Project Opened.
+D2_L2=[37936]Started Editing.
+D2_L3=[40340]Stopped Editing.
+D2_L4=[41099]Started Editing.
+D2_L5=[41676]Stopped Editing.
+D2_L6=[43389]Started Editing.
+D2_L7=[43490]Stopped Editing.
+D2_E=46
+D2_D=0
+D2_L8=[43490]Project Closed.
+D2_L9=[43721]Project Opened.
+D2_L10=[43730]Started Editing.
+D2_L11=[43834]Stopped Editing.
+D2_L12=[43834]Project Closed.
+D2_L13=[48798]Project Opened.
+D2_L14=[48801]Started Editing.
+D2_L15=[48896]Stopped Editing.
+D2_L16=[48896]Project Closed.
+[Units]
+Count=1
+1=EE2A Lab5 (main)

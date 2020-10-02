@@ -1,0 +1,548 @@
+CCS PCH C Compiler, Version 5.081, 44464               24-Feb-20 12:04
+
+               Filename:   D:\Lab 5\EE2A Lab5.lst
+
+               ROM used:   918 bytes (1%)
+                           Largest free fragment is 65536
+               RAM used:   28 (1%) at main() level
+                           30 (1%) worst case
+               Stack used: 0 locations
+               Stack size: 31
+
+*
+00000:  GOTO   02C6
+*
+00008:  MOVWF  04
+0000A:  MOVFF  FD8,05
+0000E:  MOVFF  FE0,06
+00012:  MOVLB  0
+00014:  MOVFF  FE9,0C
+00018:  MOVFF  FEA,07
+0001C:  MOVFF  FE1,08
+00020:  MOVFF  FE2,09
+00024:  MOVFF  FD9,0A
+00028:  MOVFF  FDA,0B
+0002C:  MOVFF  FF3,12
+00030:  MOVFF  FF4,13
+00034:  MOVFF  FFA,14
+00038:  MOVFF  FF5,15
+0003C:  MOVFF  FF6,16
+00040:  MOVFF  FF7,17
+00044:  MOVFF  FF8,18
+00048:  MOVFF  FFB,19
+0004C:  MOVFF  00,0E
+00050:  MOVFF  01,0F
+00054:  MOVFF  02,10
+00058:  MOVFF  03,11
+0005C:  MOVLB  E
+0005E:  BTFSS  xC6.1
+00060:  GOTO   006A
+00064:  BTFSC  xCE.1
+00066:  GOTO   01BC
+0006A:  MOVFF  0E,00
+0006E:  MOVFF  0F,01
+00072:  MOVFF  10,02
+00076:  MOVFF  11,03
+0007A:  MOVFF  0C,FE9
+0007E:  MOVFF  07,FEA
+00082:  BSF    07.7
+00084:  MOVFF  08,FE1
+00088:  MOVFF  09,FE2
+0008C:  MOVFF  0A,FD9
+00090:  MOVFF  0B,FDA
+00094:  MOVFF  12,FF3
+00098:  MOVFF  13,FF4
+0009C:  MOVFF  14,FFA
+000A0:  MOVFF  15,FF5
+000A4:  MOVFF  16,FF6
+000A8:  MOVFF  17,FF7
+000AC:  MOVFF  18,FF8
+000B0:  MOVFF  19,FFB
+000B4:  MOVF   04,W
+000B6:  MOVFF  06,FE0
+000BA:  MOVFF  05,FD8
+000BE:  RETFIE 0
+.................... #include <18F27K40.h> 
+.................... //////////// Standard Header file for the PIC18F27K40 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F27K40 
+000C0:  CLRF   FF7
+000C2:  ADDLW  D4
+000C4:  MOVWF  FF6
+000C6:  MOVLW  00
+000C8:  ADDWFC FF7,F
+000CA:  MOVLW  00
+000CC:  MOVWF  FF8
+000CE:  TBLRD*+
+000D0:  MOVF   FF5,W
+000D2:  RETURN 0
+000D4:  DATA 00,18
+000D6:  DATA 8F,19
+000D8:  DATA 0F,1B
+000DA:  DATA 71,1C
+000DC:  DATA A7,1D
+000DE:  DATA A6,1E
+000E0:  DATA 63,1F
+000E2:  DATA D8,1F
+000E4:  DATA FF,1F
+000E6:  DATA D8,1F
+000E8:  DATA 63,1F
+000EA:  DATA A6,1E
+000EC:  DATA A7,1D
+000EE:  DATA 71,1C
+000F0:  DATA 0F,1B
+000F2:  DATA 8F,19
+000F4:  DATA 00,18
+000F6:  DATA 70,16
+000F8:  DATA F0,14
+000FA:  DATA 8E,13
+000FC:  DATA 58,12
+000FE:  DATA 59,11
+00100:  DATA 9C,10
+00102:  DATA 27,10
+00104:  DATA 00,10
+00106:  DATA 27,10
+00108:  DATA 9C,10
+0010A:  DATA 59,11
+0010C:  DATA 58,12
+0010E:  DATA 8E,13
+00110:  DATA F0,14
+00112:  DATA 70,16
+00114:  CLRF   FF7
+00116:  ADDLW  28
+00118:  MOVWF  FF6
+0011A:  MOVLW  01
+0011C:  ADDWFC FF7,F
+0011E:  MOVLW  00
+00120:  MOVWF  FF8
+00122:  TBLRD*+
+00124:  MOVF   FF5,W
+00126:  RETURN 0
+00128:  DATA 00,18
+0012A:  DATA 0F,1B
+0012C:  DATA A7,1D
+0012E:  DATA 63,1F
+00130:  DATA FF,1F
+00132:  DATA 63,1F
+00134:  DATA A7,1D
+00136:  DATA 0F,1B
+00138:  DATA 00,18
+0013A:  DATA F0,14
+0013C:  DATA 58,12
+0013E:  DATA 9C,10
+00140:  DATA 00,10
+00142:  DATA 9C,10
+00144:  DATA 58,12
+00146:  DATA F0,14
+00148:  DATA 00,18
+0014A:  DATA 0F,1B
+0014C:  DATA A7,1D
+0014E:  DATA 63,1F
+00150:  DATA FF,1F
+00152:  DATA 63,1F
+00154:  DATA A7,1D
+00156:  DATA 0F,1B
+00158:  DATA 00,18
+0015A:  DATA F0,14
+0015C:  DATA 58,12
+0015E:  DATA 9C,10
+00160:  DATA 00,10
+00162:  DATA 9C,10
+00164:  DATA 58,12
+00166:  DATA F0,14
+00168:  CLRF   FF7
+0016A:  ADDLW  7C
+0016C:  MOVWF  FF6
+0016E:  MOVLW  01
+00170:  ADDWFC FF7,F
+00172:  MOVLW  00
+00174:  MOVWF  FF8
+00176:  TBLRD*+
+00178:  MOVF   FF5,W
+0017A:  RETURN 0
+0017C:  DATA 00,18
+0017E:  DATA 4F,1A
+00180:  DATA 5B,1C
+00182:  DATA EA,1D
+00184:  DATA D3,1E
+00186:  DATA 05,1F
+00188:  DATA 85,1E
+0018A:  DATA 73,1D
+0018C:  DATA FF,1B
+0018E:  DATA 64,1A
+00190:  DATA DD,18
+00192:  DATA A1,17
+00194:  DATA D4,16
+00196:  DATA 86,16
+00198:  DATA B3,16
+0019A:  DATA 3F,17
+0019C:  DATA 00,18
+0019E:  DATA C0,18
+001A0:  DATA 4C,19
+001A2:  DATA 79,19
+001A4:  DATA 2B,19
+001A6:  DATA 5E,18
+001A8:  DATA 22,17
+001AA:  DATA 9B,15
+001AC:  DATA 00,14
+001AE:  DATA 8C,12
+001B0:  DATA 7A,11
+001B2:  DATA FA,10
+001B4:  DATA 2C,11
+001B6:  DATA 15,12
+001B8:  DATA A4,13
+001BA:  DATA B0,15
+....................  
+.................... #list 
+....................  
+.................... #fuses NOMCLR RSTOSC_HFINTRC_64MHZ CLKOUT NOWDT NOPROTECT NOCPD 
+.................... #use delay(internal=32MHZ, clock_out) 
+.................... #define Forever 1 
+....................  
+.................... //using specific pins from PIC18F27K40 
+.................... #pin_select PWM4 = PIN_A4   
+.................... #pin_select SDO2 = PIN_B4 
+.................... #pin_select SCK2 = PIN_B5 
+.................... #use SPI(SPI2, MASTER, MODE=0, BITS=8) //allows us to use spi 
+....................  
+.................... int LUT_Index;  //Look-up table counter 
+.................... //Look-up Tables from Matlab 
+.................... const int16 SineWave_OneKHZ[32]= {0x1800,0x198F,0x1B0F,0x1C71,0x1DA7,0x1EA6,0x1F63,0x1FD8,0x1FFF,0x1FD8, 
+....................                                  0x1F63,0x1EA6,0x1DA7,0x1C71,0x1B0F,0x198F,0x1800,0x1670,0x14F0,0x138E, 
+....................                                  0x1258,0x1159,0x109C,0x1027,0x1000,0x1027,0x109C,0x1159,0x1258,0x138E, 
+....................                                  0x14F0,0x1670}; 
+.................... const int16 SineWave_TwoKHZ[32]= {0x1800,0x1B0F,0x1DA7,0x1F63,0x1FFF,0x1F63,0x1DA7,0x1B0F,0x1800,0x14F0, 
+....................                                  0x1258,0x109C,0x1000,0x109C,0x1258,0x14F0,0x1800,0x1B0F,0x1DA7,0x1F63, 
+....................                                  0x1FFF,0x1F63,0x1DA7,0x1B0F,0x1800,0x14F0,0x1258,0x109C,0x1000,0x109C, 
+....................                                  0x1258,0x14F0}; 
+.................... const int16 Combined_SinWave[32]={0x1800,0x1A4F,0x1C5B,0x1DEA,0x1ED3,0x1F05,0x1E85,0x1D73,0x1BFF,0x1A64, 
+....................                                  0x18DD,0x17A1,0x16D4,0x1686,0x16B3,0x173F,0x1800,0x18C0,0x194C,0x1979, 
+....................                                  0x192B,0x185E,0x1722,0x159B,0x1400,0x128C,0x117A,0x10FA,0x112C,0x1215, 
+....................                                  0x13A4,0x15B0}; 
+....................  
+.................... struct First_Structure { 
+....................    int RA_switches: 4;            //4 RA switches 
+....................    int1 Pulse_Width_Modulator;    //PWM Signal to MCP 
+....................    int1 Chip_Select;              //CS Signal to MCP 
+....................    int1 Clock_Output;             //Clock at RA6 
+....................    int1 Debug_Signal;             //Debug Test Signal  
+....................    int RB_switches: 4;            //4 RB switches (unused) 
+....................    int MSSP2: 2;                  //SDO and SCK Signal  
+....................    int unused_B: 2;               //unused B pins 
+....................    int unused_C;                  //all C pins unused 
+.................... } IO_Port_One, IO_Direction_One, IO_Latch_One; 
+....................  
+.................... #byte IO_Port_One = 0xF8D        // PORTA register in Special Function Register (SFR) 
+.................... #byte IO_Direction_One = 0xF88   // LATA register 
+.................... #byte IO_Latch_One = 0xF83       // TRISA register 
+....................  
+.................... #int_timer2 
+.................... void Timer_Two_Interrupt_Routine() { 
+001BC:  MOVLB  0
+....................    IO_Port_One.Debug_Signal = 0b1;  //Testing interrupt using one of the pins 
+001BE:  BSF    F8D.7
+....................    IO_Port_One.Chip_Select = 0b0;  //Chip Select is Low when connecting to converter 
+001C0:  BCF    F8D.5
+....................    switch(IO_Port_One.RA_switches) 
+001C2:  MOVF   F8D,W
+001C4:  ANDLW  0F
+001C6:  BZ    01D2
+001C8:  XORLW  01
+001CA:  BZ    021E
+001CC:  XORLW  02
+001CE:  BZ    026A
+001D0:  BRA    02B6
+....................    { 
+....................         case 0b0000: //1k SineWave 
+....................         { 
+....................             spi_write2(SineWave_OneKHZ[LUT_Index]>>8);       // High byte 
+001D2:  BCF    FD8.0
+001D4:  RLCF   1B,W
+001D6:  CLRF   03
+001D8:  RCALL  00C0
+001DA:  TBLRD*+
+001DC:  MOVFF  FF5,03
+001E0:  MOVWF  1C
+001E2:  MOVFF  03,1C
+001E6:  CLRF   1D
+001E8:  MOVLB  E
+001EA:  MOVF   x92,W
+001EC:  MOVFF  03,E92
+001F0:  RRCF   x95,W
+001F2:  BNC   01F0
+....................             spi_write2(SineWave_OneKHZ[LUT_Index] & 0x00FF); // low byte 
+001F4:  BCF    FD8.0
+001F6:  RLCF   1B,W
+001F8:  CLRF   03
+001FA:  MOVLB  0
+001FC:  RCALL  00C0
+001FE:  TBLRD*+
+00200:  MOVFF  FF5,03
+00204:  MOVWF  1C
+00206:  CLRF   1D
+00208:  MOVLB  E
+0020A:  MOVF   x92,W
+0020C:  MOVFF  1C,E92
+00210:  RRCF   x95,W
+00212:  BNC   0210
+....................             LUT_Index = ++LUT_Index % 32; 
+00214:  INCF   1B,F
+00216:  MOVLW  1F
+00218:  ANDWF  1B,F
+....................             break; 
+0021A:  BRA    02BA
+0021C:  MOVLB  0
+....................         } 
+....................         case 0b0001: //2k SineWave 
+....................         { 
+....................             spi_write2(SineWave_TwoKHZ[LUT_Index]>>8);       // High byte 
+0021E:  BCF    FD8.0
+00220:  RLCF   1B,W
+00222:  CLRF   03
+00224:  RCALL  0114
+00226:  TBLRD*+
+00228:  MOVFF  FF5,03
+0022C:  MOVWF  1C
+0022E:  MOVFF  03,1C
+00232:  CLRF   1D
+00234:  MOVLB  E
+00236:  MOVF   x92,W
+00238:  MOVFF  03,E92
+0023C:  RRCF   x95,W
+0023E:  BNC   023C
+....................             spi_write2(SineWave_TwoKHZ[LUT_Index] & 0x00FF); // low byte 
+00240:  BCF    FD8.0
+00242:  RLCF   1B,W
+00244:  CLRF   03
+00246:  MOVLB  0
+00248:  RCALL  0114
+0024A:  TBLRD*+
+0024C:  MOVFF  FF5,03
+00250:  MOVWF  1C
+00252:  CLRF   1D
+00254:  MOVLB  E
+00256:  MOVF   x92,W
+00258:  MOVFF  1C,E92
+0025C:  RRCF   x95,W
+0025E:  BNC   025C
+....................             LUT_Index = ++LUT_Index % 32; 
+00260:  INCF   1B,F
+00262:  MOVLW  1F
+00264:  ANDWF  1B,F
+....................             break; 
+00266:  BRA    02BA
+00268:  MOVLB  0
+....................         } 
+....................         case 0b0011: //1k + 2k SineWave 
+....................         { 
+....................             spi_write2(Combined_SinWave[LUT_Index]>>8);       // High byte 
+0026A:  BCF    FD8.0
+0026C:  RLCF   1B,W
+0026E:  CLRF   03
+00270:  RCALL  0168
+00272:  TBLRD*+
+00274:  MOVFF  FF5,03
+00278:  MOVWF  1C
+0027A:  MOVFF  03,1C
+0027E:  CLRF   1D
+00280:  MOVLB  E
+00282:  MOVF   x92,W
+00284:  MOVFF  03,E92
+00288:  RRCF   x95,W
+0028A:  BNC   0288
+....................             spi_write2(Combined_SinWave[LUT_Index] & 0x00FF); // low byte 
+0028C:  BCF    FD8.0
+0028E:  RLCF   1B,W
+00290:  CLRF   03
+00292:  MOVLB  0
+00294:  RCALL  0168
+00296:  TBLRD*+
+00298:  MOVFF  FF5,03
+0029C:  MOVWF  1C
+0029E:  CLRF   1D
+002A0:  MOVLB  E
+002A2:  MOVF   x92,W
+002A4:  MOVFF  1C,E92
+002A8:  RRCF   x95,W
+002AA:  BNC   02A8
+....................             LUT_Index = ++LUT_Index % 32; 
+002AC:  INCF   1B,F
+002AE:  MOVLW  1F
+002B0:  ANDWF  1B,F
+....................             break; 
+002B2:  BRA    02BA
+002B4:  MOVLB  0
+....................         } 
+....................         default: 
+....................         { 
+....................             LUT_Index = 0; 
+002B6:  CLRF   1B
+002B8:  MOVLB  E
+....................         } 
+....................    } 
+....................    IO_Port_One.Chip_Select = 0b1;  //CS becomes High  
+002BA:  BSF    F8D.5
+....................    IO_Port_One.Debug_Signal = 0b0; 
+002BC:  BCF    F8D.7
+002BE:  BCF    xCE.1
+002C0:  MOVLB  0
+002C2:  GOTO   006A
+.................... } 
+....................  
+.................... void main () { 
+002C6:  BSF    F81.7
+002C8:  BCF    F81.6
+002CA:  CLRF   FF8
+002CC:  BCF    FF2.5
+002CE:  BSF    07.7
+002D0:  MOVLB  E
+002D2:  MOVLW  55
+002D4:  MOVWF  xA0
+002D6:  MOVLW  AA
+002D8:  MOVWF  xA0
+002DA:  BCF    xA0.0
+002DC:  MOVLW  0D
+002DE:  MOVWF  x8F
+002E0:  MOVLW  08
+002E2:  MOVWF  xEB
+002E4:  MOVLW  12
+002E6:  MOVWF  xF3
+002E8:  MOVLW  11
+002EA:  MOVWF  xF4
+002EC:  MOVLW  55
+002EE:  MOVWF  xA0
+002F0:  MOVLW  AA
+002F2:  MOVWF  xA0
+002F4:  BSF    xA0.0
+002F6:  CLRF   xDD
+002F8:  CLRF   xDA
+002FA:  CLRF   xDC
+002FC:  MOVLW  06
+002FE:  MOVWF  xDE
+00300:  MOVLW  60
+00302:  MOVWF  xD8
+00304:  BCF    x96.5
+00306:  MOVLW  40
+00308:  MOVWF  x95
+0030A:  MOVLW  20
+0030C:  MOVWF  x96
+0030E:  BCF    F89.4
+00310:  BCF    F89.5
+00312:  MOVLB  F
+00314:  CLRF   x11
+00316:  CLRF   x19
+00318:  CLRF   x21
+0031A:  CLRF   x3A
+0031C:  CLRF   x3B
+0031E:  CLRF   x3C
+00320:  CLRF   x39
+00322:  CLRF   x36
+00324:  CLRF   x37
+00326:  CLRF   x38
+00328:  CLRF   x35
+....................    IO_Direction_One.RA_switches = 0b1111;           //set as inputs because switches 
+0032A:  MOVLW  F0
+0032C:  ANDWF  F88,W
+0032E:  IORLW  0F
+00330:  MOVWF  F88
+....................    IO_Direction_One.Pulse_Width_Modulator= 0b0;     //pwm signal (output) 
+00332:  BCF    F88.4
+....................    IO_Direction_One.Chip_Select = 0b0;              //cs signal as output 
+00334:  BCF    F88.5
+....................    IO_Direction_One.Clock_Output = 0b0;             //clock output 
+00336:  BCF    F88.6
+....................    IO_Direction_One.Debug_Signal = 0b0;             //debug signal test as output 
+00338:  BCF    F88.7
+....................    IO_Direction_One.RB_switches = 0b1111;           //RB switches as inputs 
+0033A:  MOVLW  F0
+0033C:  ANDWF  F89,W
+0033E:  IORLW  0F
+00340:  MOVWF  F89
+....................    IO_Direction_One.MSSP2 = 0b00;                   //output to MCP4821 SDO and SCK 
+00342:  MOVLW  CF
+00344:  ANDWF  F89,W
+00346:  MOVWF  F89
+....................    IO_Direction_One.unused_B = 0b00;                //remaining B pins as output 
+00348:  MOVLW  3F
+0034A:  ANDWF  F89,W
+0034C:  MOVWF  F89
+....................    IO_Direction_One.unused_C = 0b00000000;          //all C as output 
+0034E:  CLRF   F8A
+....................     
+....................    port_a_pullups(0xFF);                            //weak pull-up resistor for switches in RA 
+00350:  SETF   x10
+....................     
+....................    //setting PWM pulse 
+....................    setup_ccp2(CCP_PWM|CCP_USE_TIMER1_AND_TIMER2);       // Configure CCP2 as a PWM, //CCP2 is paired with Timer 2 
+00352:  MOVLW  0C
+00354:  MOVWF  FA8
+00356:  MOVLW  F3
+00358:  ANDWF  FAE,F
+0035A:  MOVLW  04
+0035C:  IORWF  FAE,F
+0035E:  BSF    FA8.7
+....................    setup_pwm4(PWM_ENABLED|PWM_ACTIVE_HIGH|PWM_TIMER2);  // enabling pwm 
+00360:  BCF    F88.4
+00362:  MOVF   FAE,W
+00364:  ANDLW  3F
+00366:  IORLW  40
+00368:  MOVWF  FAE
+0036A:  MOVLW  80
+0036C:  MOVWF  FA2
+....................    set_pwm4_duty(968);                                  // setting pwm ccprx twin register value 
+0036E:  MOVLW  F2
+00370:  MOVWF  FA1
+00372:  CLRF   FA0
+....................     
+....................    //frequency  
+....................    setup_timer_2(T2_CLK_INTERNAL | T2_DIV_BY_1, 249, 1); //prescaler, PR, postscaler 
+00374:  CLRF   FC0
+00376:  CLRF   FBE
+00378:  MOVLW  01
+0037A:  MOVWF  FBF
+0037C:  MOVLW  F9
+0037E:  MOVWF  FBC
+00380:  MOVLW  80
+00382:  MOVWF  FBD
+....................     
+....................    //interrupts that might be enabled later 
+....................    enable_interrupts(INT_TIMER2); // Timer 2 interrupt enable 
+00384:  MOVLB  E
+00386:  BSF    xC6.1
+....................    enable_interrupts(GLOBAL); // 'Global' interrupt enable 
+00388:  MOVLW  C0
+0038A:  IORWF  FF2,F
+....................     
+....................    //setting spi taking signals when rising (Low to High) 
+....................    setup_spi(SPI_Master | SPI_L_TO_H); 
+0038C:  BCF    F96.5
+0038E:  MOVLW  20
+00390:  MOVWF  F96
+00392:  MOVLW  00
+00394:  MOVWF  F95
+....................     
+....................    while(Forever) 
+....................    { 
+00396:  BRA    0396
+....................       //stays on, FOREVER... 
+....................    } 
+.................... } 
+....................  
+00398:  SLEEP 
+....................  
+
+Configuration Fuses:
+   Word  1: FE8C   NOEXTOSC RSTOSC_HFINTRC_64MHZ CLKOUT CKS FCMEN
+   Word  2: FFFC   NOMCLR PUT NOLPBOR BROWNOUT BORV24 ZCDDIS PPS1WAY STVREN NODEBUG NOXINST
+   Word  3: FF9F   WDTSW NOWDT WDTWIN_SW WDTCLK_SW
+   Word  4: DFFF   NOWRT NOWRTC NOWRTB NOWRTD SCANE NOLVP
+   Word  5: FFFF   NOPROTECT NOCPD
+   Word  6: FFFF   NOEBTR NOEBTRB

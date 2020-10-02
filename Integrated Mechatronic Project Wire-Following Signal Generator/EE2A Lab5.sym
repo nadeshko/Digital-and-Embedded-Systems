@@ -1,0 +1,107 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019     @INTERRUPT_AREA
+01A     @INTERRUPT_AREA
+01B     LUT_Index
+01C     @SPI_XFER_1_8.P1
+01C     Timer_Two_Interrupt_Routine.@SCRATCH1
+01D     Timer_Two_Interrupt_Routine.@SCRATCH2
+ED6.2   WDTSTATE
+F2F.4   LVDRDY
+F2F.5   LVDOUT
+F35.6   C2OUT
+F39.6   C1OUT
+F51.0   MDBIT
+F51.5   MDOUT
+F5A.3   ADACLR
+F83-F85 IO_Latch_One
+F88-F8A IO_Direction_One
+F8D-F8F IO_Port_One
+FA2.5   PWM4OUT
+FA5.5   PWM3OUT
+FA6     CCP_2
+FA6     CCP_2_LOW
+FA7     CCP_2_HIGH
+FAA     CCP_1_LOW
+FAA     CCP_1
+FAB     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000C0  SineWave_OneKHZ.call
+0000D4  SineWave_OneKHZ.data
+000114  SineWave_TwoKHZ.call
+000128  SineWave_TwoKHZ.data
+000168  Combined_SinWave.call
+00017C  Combined_SinWave.data
+0001BC  Timer_Two_Interrupt_Routine
+0002C6  @cinit1
+0002C6  MAIN
+00032A  @cinit2
+
+Project Directory:
+    D:\Lab 5\
+
+Project Files:
+    EE2A Lab5.c                                             [24-Feb-20 12:04  CRC=841DA0AB]
+    C:\Program Files (x86)\PICC\Devices\18F27K40.h          [20-Sep-18 11:32  CRC=B222C056]
+
+Source signature=E8632157
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=952F
+
+Units:
+    EE2A Lab5 (main)
+
+Compiler Settings:
+    Processor:      PIC18F27K40
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   EE2A Lab5.xsym
+    Errors:      EE2A Lab5.err
+    Ext Symbols: EE2A Lab5.esym
+    INHX32:      EE2A Lab5.hex
+    Symbols:     EE2A Lab5.sym
+    List:        EE2A Lab5.lst
+    Debug/COFF:  EE2A Lab5.cof
+    Project:     EE2A Lab5.ccspjt
+    Call Tree:   EE2A Lab5.tre
+    Statistics:  EE2A Lab5.STA
