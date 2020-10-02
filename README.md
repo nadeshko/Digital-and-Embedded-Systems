@@ -1,7 +1,7 @@
 # Digital-and-Embedded-Systems
 EE2B University Course
 
-# Asynchronous Finite State Machine ImplementationElectronic Lock - Lab 3 Aims
+# Asynchronous Finite State Machine Implementation Electronic Lock - Lab 3 Aims
 - Implement a sophisticated asynchronous digital circuit on a programmable logic device.
 - A working circuit, thorough simulation and verification procedures targeted as written evidence during legal proceedings.
 
